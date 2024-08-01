@@ -10,7 +10,7 @@
 
 ## Formål
 
-Denne app har til formål at støtte personer, især studerende, der kan have svært ved rækkefølgen af vasketrin. Ved at opdele processen i letforståelige trin, giver WashWise brugerne mulighed for at blive mere selvstændige i håndteringen af deres vask.
+Denne app har til formål at støtte personer, der kan have svært ved rækkefølgen af vasketrin. Ved at opdele processen i letforståelige trin, giver WashWise brugerne mulighed for at blive mere selvstændige i håndteringen af deres vask.
 
 ---
 
