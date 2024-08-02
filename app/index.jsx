@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Animated,
   Easing,
+  ImageBase,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import LottieView from "lottie-react-native";
@@ -69,10 +70,10 @@ export default function App() {
   return (
     <SafeAreaView className="bg-primary h-full flex">
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <View className="w-full justify-center items-center flex-1 px-4 relative">
+        <View className="w-full justify-center items-center min-h-[100vh]  px-4 ">
           {renderBubbles()}
           <Animated.Text
-            className="absolute uppercase font-pextrabold text-6xl text-white top-[10%] text-center"
+            className="absolute uppercase font-pextrabold text-3xl text-white top-[30%] text-center"
             style={{
               opacity: textOpacity,
               transform: [{ translateY: textTranslateY }],
@@ -85,13 +86,10 @@ export default function App() {
               source={animation}
               autoPlay
               loop
-              style={{ width: 300, height: 400 }} // Adjust the width and height to make it bigger
+              style={{ width: 300, height: 300 }} // Adjust the width and height to make it smaller
             />
-            <Text className="text-white text-lg max-w-[1080px] text-center font-bold mt-[-60px]">
-              En App for dig
-            </Text>
-            <Text className="text-white text-lg max-w-[1080px] text-center font-bold ">
-              Som ønsker at blive bedre til at vaske tøj
+            <Text className="text-white text-lg text-center font-bold ">
+              Den bedste vasketøjs guide
             </Text>
           </View>
           <View className="absolute bottom-10 w-full flex items-center">
