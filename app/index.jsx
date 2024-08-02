@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+import { Redirect, router } from "expo-router";
 import {
   ScrollView,
   Text,
@@ -12,6 +13,7 @@ import LottieView from "lottie-react-native";
 import React, { useEffect, useRef } from "react";
 import animation from "../assets/icons/Laundryanimation.json"; // Update with the correct path to your Lottie file
 import * as Animatable from "react-native-animatable";
+import CustomButton from "../components/CustomButton";
 
 export default function App() {
   const textOpacity = useRef(new Animated.Value(0)).current; // Initial opacity set to 0
@@ -93,17 +95,15 @@ export default function App() {
             </Text>
           </View>
           <View className="absolute bottom-10 w-full flex items-center">
-            <TouchableOpacity
-              className="bg-blue-600 py-3 px-8 rounded"
-              onPress={() => alert("Button Pressed")}
-            >
-              <Text className="text-lg text-white text-center font-bold uppercase">
-                Start Her
-              </Text>
-            </TouchableOpacity>
+            <CustomButton
+              title="Continue with Email"
+              handlePress={() => router.push("/sign-in")}
+              containerStyles="w-full rounded-xl"
+            />
           </View>
         </View>
       </ScrollView>
+      <StatusBar backgroundColor="#161622" style="light" />
     </SafeAreaView>
   );
 }
