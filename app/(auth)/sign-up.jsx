@@ -20,7 +20,7 @@ const SignUp = () => {
             className="w-[115px] h-[35px]"
           />
           <Text className="text-white text-2xl text-semibold mt-10 font-psemibold">
-            Log in to WISHWASH
+            Log in to Wishwash
           </Text>
           <FormField
             title="Username"
