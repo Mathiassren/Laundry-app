@@ -15,6 +15,7 @@ import React, { useEffect, useRef } from "react";
 import animation from "../assets/icons/Laundryanimation.json"; // Update with the correct path to your Lottie file
 import * as Animatable from "react-native-animatable";
 import CustomButton from "../components/CustomButton";
+import { useGlobalContext } from "../context/GlobalProvider";
 
 export default function App() {
   const textOpacity = useRef(new Animated.Value(0)).current; // Initial opacity set to 0
