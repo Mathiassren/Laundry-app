@@ -18,6 +18,9 @@ import CustomButton from "../components/CustomButton";
 import { useGlobalContext } from "../context/GlobalProvider";
 
 export default function App() {
+  const { isLoading, isLoggedIn } = useGlobalContext();
+
+  if (!isLoading && isLoggedIn) return <Redirect href="/home" />;
   const textOpacity = useRef(new Animated.Value(0)).current; // Initial opacity set to 0
   const textTranslateY = useRef(new Animated.Value(10)).current; // Initial position set to 10
 
