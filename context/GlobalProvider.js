@@ -1,6 +1,6 @@
+// context/GlobalProvider.js
 import React, { createContext, useContext, useEffect, useState } from "react";
-
-import { getCurrentUser } from "../lib/appwrite";
+import { getCurrentUser, logout } from "../lib/appwrite"; // Update the import path as necessary
 
 const GlobalContext = createContext();
 export const useGlobalContext = () => useContext(GlobalContext);
@@ -29,6 +29,16 @@ const GlobalProvider = ({ children }) => {
       });
   }, []);
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      setIsLogged(false);
+      setUser(null);
+    } catch (error) {
+      console.error("Failed to logout", error);
+    }
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -37,6 +47,7 @@ const GlobalProvider = ({ children }) => {
         user,
         setUser,
         loading,
+        handleLogout, // Expose the handleLogout function
       }}
     >
       {children}

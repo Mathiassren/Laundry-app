@@ -12,6 +12,7 @@ import {
 import images from "../../constants/images";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Animatable from "react-native-animatable";
+import Profile from "../../components/profile";
 
 const steps = [
   "Åben lågen",
@@ -85,6 +86,7 @@ const Home = () => {
         <View style={styles.initialScreen}>
           <Text style={styles.headerText}>Latest Laundry</Text>
           <View style={styles.imageWrapper}>
+            <Profile />
             <TouchableOpacity
               style={styles.imageButton}
               onPress={() => setCurrentStep(0)} // Start steps for light laundry
